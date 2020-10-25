@@ -1,0 +1,12 @@
+#success {
+    display: none;
+}
+
+#js-logo {
+    width: 50px;
+    float: left;
+}
+
+.home {
+    display: inline-flex;
+}
