@@ -8,82 +8,75 @@ var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answer");
 var questions = [
     // 1
-     {"q":"_____ JavaScript statements in an HTML page respond to user events like mouse-clicks and form input.",
-    "A":"Client-side",
-    "B":"Server-side",
-    "C":"Local",
-    "D":"Native",
-    "ans":"A"},
+    {"q":"_____ JavaScript statements in an HTML page respond to user events like mouse-clicks and form input.",
+    "1":"Client-side",
+    "2":"Server-side",
+    "3":"Local",
+    "4":"Native",
+    "ans":"1"},
     // 2
     {"q":"How does JavaScript store dates in a date object?",
-    "A":"In days since January 1, 1900.",
-    "B":"In milliseconds since January 1, 1970.",
-    "C":"In seconds since Netscape's public stock offering.",
-    "D":"In hours since the first full-stack bootcamp course began.",
-    "ans":"B"},
+    "1":"In days since January 1, 1900.",
+    "2":"In milliseconds since January 1, 1970.",
+    "3":"In seconds since Netscape's public stock offering.",
+    "4":"In hours since the first full-stack bootcamp course began.",
+    "ans":"2"},
     // 3
     {"q":"Which of the following is not a valid JavaScript variable name?",
-    "A":"twoNames",
-    "B":"Twonames",
-    "C":"2names",
-    "D":"two-names",
-    "ans":"C"},
+    "1":"twoNames",
+    "2":"Twonames",
+    "3":"2names",
+    "4":"two-names",
+    "ans":"3"},
     // 4
     {"q":"This type of statement tests for a specific condition.",
-    "A":"For",
-    "B":"If",
-    "C":"Switch",
-    "D":"Select",
-    "ans":"B"},
+    "1":"For",
+    "2":"If",
+    "3":"Switch",
+    "4":"Select",
+    "ans":"2"},
     // 5
     {"q":"What does the keyword 'this' mean?",
-    "A":"It refers to the current object.",
-    "B":"It refers to the previous object.",
-    "C":"It is a variable that contains a value",
-    "D":"It calls a function.",
-    "ans":"A"},
+    "1":"It refers to the current object.",
+    "2":"It refers to the previous object.",
+    "3":"It is a variable that contains a value",
+    "4":"It calls a function.",
+    "ans":"1"},
     // 6
     {"q":"What is the correct syntax for referring to an external script called 'xyz.js'?",
-    "A":"<script href='xyz.js'>",
-    "B":"<script name='xyz.js'>",
-    "C":"<script src='xyz.js'>",
-    "D":"<script rel='xyz.js>",
-    "ans":"C"},
+    "1":"<script href='xyz.js'>",
+    "2":"<script name='xyz.js'>",
+    "3":"<script src='xyz.js'>",
+    "4":"<script rel='xyz.js>",
+    "ans":"3"},
     // 7
     {"q":"Given the array ['wolf','bat','mist'], the index of 'wolf' is:",
-    "A":"-1",
-    "B":"0",
-    "C":"1",
-    "D":"2",
-    "ans":"B"},
+    "1":"-1",
+    "2":"0",
+    "3":"1",
+    "4":"2",
+    "ans":"2"},
     // 8
     {"q":" If para1 is the DOM object for a paragraph, what is the correct syntax to change the text within the paragraph?",
-    "A":"New Text",
-    "B":"para1.value='New Text'",
-    "C":"para1.firstChild.nodeValue= 'New Text'",
-    "D":"para1.nodeValue='New Text'",
-    "ans":"B"},
+    "1":"New Text",
+    "2":"para1.value='New Text'",
+    "3":"para1.firstChild.nodeValue= 'New Text'",
+    "4":"para1.nodeValue='New Text'",
+    "ans":"2"},
     // 9
     {"q":"The language to make writing JS more neatly and concisely is called:",
-    "A":"Bootstrap",
-    "B":"GitLab",
-    "C":"Apostol",
-    "D":"jQuery",
-    "ans":"D"},
+    "1":"Bootstrap",
+    "2":"GitLab",
+    "3":"Apostol",
+    "4":"jQuery",
+    "ans":"4"},
     // 10
     {"q":"API stands for",
-    "A":"Application Program Interface.",
-    "B":"Apple Programming Inventiveness.",
-    "C":"Applicant Public Intervention",
-    "D":"Apple Pumpkin Ingenuity",
-    "ans":"A"},
-
-
-
-
-
-
-
+    "1":"Application Program Interface.",
+    "2":"Apple Programming Inventiveness.",
+    "3":"Applicant Public Intervention",
+    "4":"Apple Pumpkin Ingenuity",
+    "ans":"1"},
 ]
 
 
@@ -104,14 +97,19 @@ function startTimer() {
 function quizMe() {
     
     for (var i=0; i<questions.length; i++) {
-    questionEl.innerHTML = (questions[i].q);
-    answerEl.innerHTML = (questions[i].A);
-
-    }
-
-
-    console.log("run() ran.");
+        questionEl.innerHTML = (questions[i].q);
+        answerEl.innerHTML = "";
+        console.log(questions[i]);
+        for (var j=0; j<5; j++) {
+            var choice = document.createElement("div");
+            choice.setAttribute("class","choice");
+            choice.setAttribute("choice-index",j);
+            choice.textContent = questions[i][j];
+            answer.appendChild(choice);
+        }
+    }   
 }
+
 
 function gameOver() {
     console.log("gameOver() ran.");

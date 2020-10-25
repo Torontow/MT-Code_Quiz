@@ -10,3 +10,10 @@
 .home {
     display: inline-flex;
 }
+
+
+
+div.choice {
+    float: left;
+    width: 100%;
+}
