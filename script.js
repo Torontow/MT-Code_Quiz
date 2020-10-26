@@ -95,19 +95,30 @@ function startTimer() {
 }
 
 function quizMe() {
-    
+    // Writes the quiz questions to the document.
     for (var i=0; i<questions.length; i++) {
-        questionEl.innerHTML = (questions[i].q);
+        questionEl.innerHTML = questions[i].q;
         answerEl.innerHTML = "";
         console.log(questions[i]);
         for (var j=0; j<5; j++) {
             var choice = document.createElement("div");
             choice.setAttribute("class","choice");
-            choice.setAttribute("choice-index",j);
+            choice.setAttribute("id",j);
             choice.textContent = questions[i][j];
-            answer.appendChild(choice);
-        }
-    }   
+            answerEl.appendChild(choice);                
+            var correctAns = questions[i].ans;
+            choice.addEventListener("click", function(event) {
+                var elIndex = event.target.id;
+                event.stopPropagation();
+                if (elIndex == correctAns){
+                    console.log("Right!");
+                } else {
+                    console.log("Wrong!");
+                    timeLeft = timeLeft-5;
+                }          
+            })
+        }    
+    }
 }
 
 
