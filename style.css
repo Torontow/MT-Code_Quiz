@@ -59,6 +59,10 @@ p {
     background-image: url("cd794538bd2b55a5071ef92743eb4516.png")
   
 }
+.score-form {
+    display: none;
+}
+
 p.option {
     float: left;
     width: 100%;

@@ -1,8 +1,25 @@
 // Starting variables
 var startButton = document.getElementById("start");
 var countEl = document.getElementById("counter");
+var scoreForm = document.getElementById("score-form");
 var timeLeft = 60;
 var qIndex = 0;
+var scores = [];
+
+
+function renderScores() {
+     
+    // Render a new li for each todo
+    for (var h = 0; h < todos.length; h++) {
+      var score = scores[i];
+  
+      var li = document.createElement("p");
+      li.textContent = score;
+      li.setAttribute("data-index", h);
+    
+      scoreForm.appendChild(li);
+    }
+}
 
 // Timer variables
 var questionEl = document.getElementById("question");
@@ -101,14 +118,34 @@ var questions = [
         "ans": "1"
     },
 ]
+// Popluates the leaderboard with stored scores
+function init() {
+    // Get stored scores from localStorage
+    // Parsing the JSON string to an object
+    var storedScores = JSON.parse(localStorage.getItem("scores"));
+  
+    // If scores were retrieved from localStorage, update the todos array to it
+    if (storedScores !== null) {
+      scores = storedScores;
+    }
+  
+    // Render todos to the DOM
+    renderScores();
+  }
 
+  function storeScores() {
+    // Stringify and set "todos" key in localStorage to todos array
+    localStorage.setItem("scores", JSON.stringify(scores));
+  }
+  
+  
 // Sets a timer for the quiz. 
 function startTimer() {
     timeLeft = 60;
     var timer = setInterval(function () {
         timeLeft--;
         countEl.textContent = timeLeft;
-        if (timeLeft == 0) {
+        if (timeLeft == 0 || qIndex == 10) {
             clearInterval(timer);
             gameOver();
         }
@@ -119,7 +156,6 @@ function startTimer() {
 function quizMe(qIndex) {
 
     if (timeLeft !== 0 && qIndex <10) {
-        // while (qIndex <11) {
         // Writes the quiz questions to the document.
 
         questionEl.innerHTML = questions[qIndex].q;
@@ -155,9 +191,32 @@ function quizMe(qIndex) {
 
 
 function gameOver() {
-    console.log("gameOver() ran.")
-    console.log(timeLeft);
+    var score = timeLeft;
+    clearInterval(startTimer);
+    questionEl.innerHTML = "Your score:";
+    answerEl.innerHTML = score;
+    var leader = document.createElement("p");
+    leader.textContent = score;
+    var player = document.getElementById("score-achiever");
 
+    scoreForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+      
+        var achiever = player.value.trim();
+      
+        // Return from function early if submitted todoText is blank
+        if (achiever === "") {
+          return;
+        }
+      
+        // Add new score text to scores array, clear the input
+        scores.push(achiever);
+      
+        // Store updated todos in localStorage, re-render the list
+        storeScores();
+        renderScores();
+      });
+      
     // -Displays your score
     // -asks to enter initials for score
     // -updates leaderboard content
@@ -165,7 +224,6 @@ function gameOver() {
 
 // Start Button 
 startButton.addEventListener("click", startTimer);
-// startButton.addEventListener("click", quizMe);
 
 
 
