@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Diplomata+SC&family=Syne+Mono&display=swap"
+        rel="stylesheet">
 
     <title>Javascript Code Quiz</title>
 
 </head>
 
-<body>  
+<body>
 
-<div class="container">
-    <div class="container">
-        <div class="row">
-            <div class="col" id="leaderboard">
-            Leaderboard (link to list of scores)
-            </div>
-            <div class="col-6" id="title" style="text-align: center">
-                <img src="js-logo-png-5.png" alt="Javascript logo" id="js-logo">
-                <h1>Code Quiz!</h1>
-            </div>
-            <div class="col" id="time-left">
-            Time Left: <span id="count">60</span>
-            </div>
+    <div class="row">
+        <div class="col header" id="leaderboard">
+            <h2>The Highest Scores</h2>
         </div>
-        <div class="row">
-            <div class="col">
-            Blank (fun graphic?)
-            </div>
-            <div class="col-6">
-                <div class="row" id="question">
-                    <h3>You've made it to week four! Time to test your knowledge! But no time for Google...</h3>
-                    <p>Answer as many multiple choice questions as you can before time runs out.</p>
-                    <p>Answer them all before time runs out and the time remaining is your score.</p>
-                    <p><strong>Careful!</strong> Answer incorrectly, and you lose seconds like they didn't exist.</p>
-                    <button type="button" class="btn btn-secondary home" id="start">Begin!</button>
-                </div>
-                <div class="row">
-                    <p id="answer"></p>
-                </div>
-
-
-                <div class="row card" id="success">
-                    <div class="card-body">
-                    </div>
-                  </div>
-            </div>
-            <div class="col">
-            Blank (fun graphic?)
-            </div>
+        <div class="col-6 wood" id="title" style="text-align: center">
+            <img src="js-logo-png-5.png" alt="Javascript logo" id="js-logo">
+            <h1>Code Quiz!</h1>
+        </div>
+        <div class="col" id="time-left">
+            <h2>Time Left: <span id="counter">60</span></h2>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col wood">
+        </div>
+        <div class="col-6">
+            <div class="row" id="question">
+                <h2 id="week-4">You've made it to week four!</h2>
+                <h3>Time to test your knowledge!<h3>
+                        <h4>But no time for Google...</h4>
+                        <p><span id="bullet">& </span>The Highest Score belongs to whom the questions asked will pose no
+                            doom.</p>
+                        <p><span id="bullet">& </span>Guess away and time will stray--a score of <span
+                                class="counter">0</span> won't win the day.</p>
+                        <button type="button" class="btn btn-secondary home" id="start">Begin!</button>
+            </div>
+            <div class="row" id="answer">
+            </div>
+
+
+        </div>
+        <div class="col wood">
+        </div>
+    </div>
 
 
 
 
 
-<script src="./script.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 
 </body>
 

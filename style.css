@@ -1,3 +1,36 @@
+* {
+    font-family: 'Syne Mono', monospace;
+}
+h1 {
+    font-family: "Diplomata SC",cursive;
+    color: beige;
+}
+body {
+    background-color: black;
+}
+#counter {
+    color: lime;
+    font-weight: bold;
+}
+
+.container {
+    margin: 45px;
+}
+
+.btn {
+    align-content: center;
+}
+#bullet {
+    color: red;
+}
+#question {
+    padding: 18px;
+    background-image: url("gold-concrete-wall-floor-background-design-91646294.jpg");
+}
+
+p {
+    font-size: x-large;
+}
 #success {
     display: none;
 }
@@ -11,9 +44,22 @@
     display: inline-flex;
 }
 
+.wood {
+    /* image */
+    background-image: url("PHE-10-27-11-2013-SIM-LR.jpeg");
+}
+#leaderboard {
+    background-image: url("cd794538bd2b55a5071ef92743eb4516.png");
+    border: 18px;
+    
+    border-color: black;
+}
 
-
-div.choice {
+#time-left {
+    background-image: url("cd794538bd2b55a5071ef92743eb4516.png")
+  
+}
+p.option {
     float: left;
     width: 100%;
 }
